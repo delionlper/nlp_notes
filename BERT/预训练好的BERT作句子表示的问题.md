@@ -6,6 +6,6 @@
 </br>
 
 语言模型的统一定义，给定context(c)预测得到token(x)的概率分布，即:
-![](https://latex.codecogs.com/gif.latex?\\p(x|c)%20=%20\frac%20{exp(h_c^T%20w_x)}{\sum_{{x}%27}%20exp(h_c^T%20w_{{x}%27})})
+![](https://latex.codecogs.com/gif.latex?\\p(x|c)=\frac{exp(h_c^Tw_x)}{\sum_{{x}%27}exp(h_c^Tw_{{x}%27})})
 
 </br>
