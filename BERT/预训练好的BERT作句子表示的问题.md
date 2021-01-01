@@ -21,3 +21,6 @@
 ### 如何改进
 这篇论文提出了将BERT embedding空间映射到一个标准高斯隐空间的方法。高斯分布满足各向同性；分布区域没有“洞”。
 具体如何做的后续再分析。
+
+参考资料：
+* [还在用[CLS]？从BERT得到最强句子Embedding的打开方式！](https://mp.weixin.qq.com/s/WKj4vtm_Iwmp-STGD3ukhw)
