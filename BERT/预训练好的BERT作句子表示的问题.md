@@ -6,12 +6,12 @@
 </br>
 
 语言模型的统一定义，给定context(c)预测得到token(x)的概率分布，即:
-![](https://latex.codecogs.com/gif.latex?p(x|c)=\frac{exp(h_c^Tw_x)}{\sum_{{x}'}exp(h_c^Tw_{{x}'})})
+![](https://latex.codecogs.com/svg.latex?p(x|c)=\frac{exp(h_c^Tw_x)}{\sum_{{x}'}exp(h_c^Tw_{{x}'})})
 </br>
-这里![](https://latex.codecogs.com/gif.latex?h_c)是context embedding，![](https://latex.codecogs.com/gif.latex?w_x)表示的word embedding。
+这里![](https://latex.codecogs.com/svg.latex?h_c) 是context embedding，![](https://latex.codecogs.com/svg.latex?w_x)表示的word embedding。
 
-</br>
 ### 各向异性嵌入空间
+语言模型中最大似然目标的训练会产生各向异性的词向量空间，即向量各个方向分布并不均匀，并且在向量空间中占据了一个狭窄的圆锥体。
 
 
 
