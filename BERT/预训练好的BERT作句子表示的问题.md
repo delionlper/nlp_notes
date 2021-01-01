@@ -5,10 +5,10 @@
 最近ByteDance和CMU在EMNLP 2020上的一篇论文[On the Sentence Embeddings from Pre-trained Language Models](https://arxiv.org/pdf/2011.05864.pdf)关于这个问题做了一些详尽的分析和解决方案。
 </br>
 
-语言模型的统一定义，给定context(c)预测得到token(x)的概率分布，即:
+语言模型的统一定义，给定context(c)预测得到token(x)的概率分布，即: </br>
 ![](https://latex.codecogs.com/svg.latex?p(x|c)=\frac{exp(h_c^Tw_x)}{\sum_{{x}'}exp(h_c^Tw_{{x}'})})
-</br>
-这里![](https://latex.codecogs.com/svg.latex?h_c) 是context embedding，![](https://latex.codecogs.com/svg.latex?w_x)表示的word embedding。
+
+这里![](https://latex.codecogs.com/svg.latex?h_c)是context embedding，![](https://latex.codecogs.com/svg.latex?w_x)表示word embedding。
 
 ### 各向异性嵌入空间
 语言模型中最大似然目标的训练会产生各向异性的词向量空间，即向量各个方向分布并不均匀，并且在向量空间中占据了一个狭窄的圆锥体。
