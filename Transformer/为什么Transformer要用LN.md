@@ -1,4 +1,4 @@
-### Batch Normalization <br/>
+### Batch Normalization 
 
 作用防止梯度消失，原因是能将神经元输出值拉回梯度变化明显的区域。针对sigmoid和tanh这种有梯度饱和区域的激活函数。</br>
 所有的归一化都能起到平滑损失平面的作用，加速收敛速度？
@@ -8,7 +8,7 @@
 
 ![](https://latex.codecogs.com/svg.latex?\hat{x}^{(k)}=\alpha^{(k)}\frac{x^{(k)}-E[x^{(k)}]}{\sqrt{Var[x^{(k)}]+\epsilon}}+\beta^{(k)})
 
-加了两个可以学习的变量![](https://latex.codecogs.com/svg.latex?\alpha)和![](https://latex.codecogs.com/svg.latex?\beta)用于控制网络能够表达直接映射，也就是能够还原BN之前学习到的特征。 <br/>
+加了两个可以学习的变量![](https://latex.codecogs.com/svg.latex?\alpha)和![](https://latex.codecogs.com/svg.latex?\beta)用于控制网络能够表达直接映射，也就是能够还原BN之前学习到的特征。 </br>
 
 #### BN & CNN
 在CNN中，针对N,C,H,W的输入，对每个C，在N,H,W三个维度上做均值和方差的归一化，N即是batch size。
@@ -29,7 +29,8 @@
 
 其中![](https://latex.codecogs.com/svg.latex?H)是隐藏层中节点数量，![](https://latex.codecogs.com/svg.latex?l)是MLP的层数。</br>
 
-![](https://latex.codecogs.com/svg.latex?\mathbf{h}=f(\frac{\mathbf{g}}{\sqrt{\sigma^2+\epsilon}}\odot(\mathbf{a}-\mu)+\mathbf{b})) <br/>
+![](https://latex.codecogs.com/svg.latex?\mathbf{h}=f(\frac{\mathbf{g}}{\sqrt{\sigma^2+\epsilon}}\odot(\mathbf{a}-\mu)+\mathbf{b})) </br>
+
 和BN一样，用增益![](https://latex.codecogs.com/svg.latex?\mathbf{g})和偏置![](https://latex.codecogs.com/svg.latex?\mathbf{b})以及激活函数![](https://latex.codecogs.com/svg.latex?f)来保证归一化操作不破坏之前的信息。
 
 #### LN & RNN
