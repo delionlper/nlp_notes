@@ -6,13 +6,12 @@
 #### BN & MLP
 在MLP中，针对N,H的输入，对H上的每个神经元，在N（batch size）这个维度上做均值和方差的归一化
 
-![](https://latex.codecogs.com/svg.latex?\hat{x}^{(k)}=\alpha^{(k)}\frac{x^{(k)}-E\[x^{(k)}\]}{\sqrt{Var\[x^{(k)}\]+\epsilon^{(k)}}}+\beta^{(k)})
+![](https://latex.codecogs.com/svg.latex?\hat{x}^{(k)}=\alpha^{(k)}\frac{x^{(k)}-E[x^{(k)}]}{\sqrt{Var[x^{(k)}]+\epsilon}}+\beta^{(k)})
 
 加了两个可以学习的变量![](https://latex.codecogs.com/svg.latex?\alpha)和![](https://latex.codecogs.com/svg.latex?\beta)用于控制网络能够表达直接映射，也就是能够还原BN之前学习到的特征。 <br/>
 
 #### BN & CNN
 在CNN中，针对N,C,H,W的输入，对每个C，在N,H,W三个维度上做均值和方差的归一化，N即是batch size。
-
 
 #### BN的缺点：
 * batch size小的时候效果不好，稳定性差 
@@ -28,9 +27,9 @@
 
 ![](https://latex.codecogs.com/svg.latex?\sigma^l=\sqrt{\frac{1}{H}\sum_{i=1}^H({a_i^l-\mu^l})^2})
 
-其中![](https://latex.codecogs.com/svg.latex?H)是隐藏层中节点数量，![](https://latex.codecogs.com/svg.latex?l)是MLP的层数。
+其中![](https://latex.codecogs.com/svg.latex?H)是隐藏层中节点数量，![](https://latex.codecogs.com/svg.latex?l)是MLP的层数。</br>
 
-![](https://latex.codecogs.com/svg.latex?\mathbf{h}=f(\frac{\mathbf{g}}{\sqrt{\sigma^2+\epsilon}}\odot(\mathbf{a}-\mu)+\mathbf{b}))
+![](https://latex.codecogs.com/svg.latex?\mathbf{h}=f(\frac{\mathbf{g}}{\sqrt{\sigma^2+\epsilon}}\odot(\mathbf{a}-\mu)+\mathbf{b})) <br/>
 和BN一样，用增益![](https://latex.codecogs.com/svg.latex?\mathbf{g})和偏置![](https://latex.codecogs.com/svg.latex?\mathbf{b})以及激活函数![](https://latex.codecogs.com/svg.latex?f)来保证归一化操作不破坏之前的信息。
 
 #### LN & RNN
@@ -41,7 +40,7 @@
 
 ### Thansformer中使用Layer Normalization
 [引用](https://www.zhihu.com/question/395811291/answer/1260290120)这里的说法
-* layer normalization 有助于得到一个球体空间中符合0均值1方差高斯分布的 embedding， batch normalization不具备这个功能。
+* layer normalization有助于得到一个球体空间中符合0均值1方差高斯分布的 embedding， batch normalization不具备这个功能。
 * layer normalization可以对transformer学习过程中由于多词条embedding累加可能带来的“尺度”问题施加约束，相当于对表达每个词一词多义的空间施加了约束，有效降低模型方差。batch normalization也不具备这个功能。
 
 参考资料：
