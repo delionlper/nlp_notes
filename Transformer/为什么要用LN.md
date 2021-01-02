@@ -19,6 +19,8 @@
 * 不适合RNN这种动态长度的模型，batch中的样本长度不一致，靠后的输入不能算。虽然实际操作中可以把长度差不多的并入一个batch中。
 * BN不适合NLP，[引用](https://github.com/DA-southampton/NLP_ability/blob/master/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/Transformer/NLP%E4%BB%BB%E5%8A%A1%E4%B8%AD-layer-norm%E6%AF%94BatchNorm%E5%A5%BD%E5%9C%A8%E5%93%AA%E9%87%8C.md)分析，一个batch中同一位置的不同单词，表示不同特征，在此维度归一化不合理。
 
+-------------
+
 ### Layer Normalization
 
 #### LN & MLP
