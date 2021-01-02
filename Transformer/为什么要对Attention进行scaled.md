@@ -18,7 +18,7 @@
 
 <br/>
 
-![](https://latex.codecogs.com/svg.latex?\frac{\partial{\hat{y}}}{\partial{x}}=\begin{bmatrix}\hat{y}_1&0&\cdots&0\\\\0&\hat{y}_2&\cdots&0\\\\\vdots&\vdots&\ddots&\vdots\\\\0&0&\cdots&\hat{y}_d\end{bmatrix}-\begin{bmatrix}{\hat{y}_1}^2&\hat{y}_1\hat{y}_2&\cdots&\hat{y}_1\hat{y}_d\\\\\\hat{y}_2\hat{y}_1&{\hat{y}_2}^2&\cdots&\hat{y}_2\hat{y}_d\\\vdots&\vdots&\ddots&\vdots\\\\\\hat{y}_d\hat{y}_1&\hat{y}_d\hat{y}_2&\cdots&{\hat{y}_d}^2\end{bmatrix})
+![](https://latex.codecogs.com/svg.latex?\frac{\partial{\hat{y}}}{\partial{x}}=\begin{bmatrix}\hat{y}_1&0&\cdots&0\\\\0&\hat{y}_2&\cdots&0\\\\\vdots&\vdots&\ddots&\vdots\\\\0&0&\cdots&\hat{y}_d\end{bmatrix}-\begin{bmatrix}{\hat{y}_1}^2&\hat{y}_1\hat{y}_2&\cdots&\hat{y}_1\hat{y}_d\\\\\\hat{y}_2\hat{y}_1&{\hat{y}_2}^2&\cdots&\hat{y}_2\hat{y}_d\\\\\\vdots&\vdots&\ddots&\vdots\\\\\\hat{y}_d\hat{y}_1&\hat{y}_d\hat{y}_2&\cdots&{\hat{y}_d}^2\end{bmatrix})
 
 当输入很大时，![](https://latex.codecogs.com/svg.latex?\hat{y})会成为one-hot向量，梯度会消失为0。
 
