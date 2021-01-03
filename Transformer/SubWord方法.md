@@ -75,7 +75,7 @@ ULM是另外一种subword分隔算法，它能够输出带概率的多个子词�
 
 不同于ReBERTa采用的是Byte Pair，BERT采用的是基于unicode char level。
 
-HuggingFace WordPieceTokenizer编码过程，直接使用了贪心算法，##代表非开头
+HuggingFace [WordPieceTokenizer](https://github.com/huggingface/transformers/blob/master/src/transformers/models/bert/tokenization_bert.py)编码过程，直接使用了贪心算法，##代表非开头
 ``` python
 class WordpieceTokenizer(object):
     """Runs WordPiece tokenization."""
