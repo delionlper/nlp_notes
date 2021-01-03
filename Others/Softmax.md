@@ -21,7 +21,9 @@
 
 ### CrossEntropy的梯度推导
 
-![](softmax_crossentropy.jpg)
+![](https://latex.codecogs.com/svg.latex?L=-\sum_{j=1}^Ty_jlog\hat{y}_j)
+
+![](https://latex.codecogs.com/svg.latex?\begin{aligned}\frac{\partial%20L}{\partial{x_i}}&=-\sum_k{y_k}\frac{\partial{log\hat{y}_k}}{\partial{x_i}}\\\\&=-\sum_k{y_k}\frac{1}{\hat{y}_k}\frac{\partial{\hat{y}_k}}{\partial{x_i}}\\\\&=-\sum_k{y_k}\frac{1}{\hat{y}_k}\begin{cases}\hat{y}_k(1-\hat{y}_i)&i=k\\\\-\hat{y}_k\hat{y}_i&i\neq{k}\\\\\end{cases}\\\\&=-y_i(1-\hat{y}_i)+\sum_{k\neq{i}}y_k\hat{y}_i\\\\&=\hat{y}_i-y_i,\quad{when}\sum_{y_k}=1\end{aligned})
 
 <br/>
 
