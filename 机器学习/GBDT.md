@@ -19,7 +19,7 @@
 输出：回归树![](https://latex.codecogs.com/svg.latex?\hat{f}(x))
 
 1. 初始化<br/>
-![](https://latex.codecogs.com/svg.latex?f_0(x)=arg\mathop{min}_{c}\sum_{i=1}^NL(y_i,c))
+![](https://latex.codecogs.com/svg.latex?f_0{(x)}=arg\mathop{min}_{c}\sum_{i=1}^{N}{L(y_i,c)})
 2. 对![](https://latex.codecogs.com/svg.latex?m=1,2,...,M) <br/>
     + 对![](https://latex.codecogs.com/svg.latex?i=1,2,...,N)，计算<br/>
 ![](https://latex.codecogs.com/svg.latex?r_{mi}=-{\[\frac{\partial{L(y_i,f(x_i))}}{\partial{f(x_i)}}\]}_{f(x)=f_{m-1}(x)})
