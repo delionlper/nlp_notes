@@ -9,7 +9,7 @@
 BPE(字节对)编码或二元编码是一种简单的数据压缩形式，其中最常见的一对连续字节数据被替换为该数据中不存在的字节。后期使用时需要一个替换表来重建原始数据。OpenAI GPT-2 与Facebook RoBERTa均采用此方法构建subword vector。
 
 优点：可以有效地平衡词汇表大小和步数(编码句子所需的token数量)。 <br/>
-缺点：基于贪婪和确定的符号替换，不能提供带概率的多个分片结果。
+缺点：基于贪婪和确定的符号替换，不能提供带概率的多个分片结果。ULM可以提供。
 
 
 #### 算法过程
@@ -49,6 +49,8 @@ WordPiece基于概率生成新的subword而不是下一最高频字节对。
 似然值的变化就是两个子词之间的互信息。简而言之，WordPiece每次选择合并的两个子词，他们具有最大的互信息值，也就是两子词在语言模型上具有较强的关联性，它们经常在语料中以相邻方式同时出现。
 
 ### Unigram Language Model(ULM)
+来自于ACL 2018的工作[Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates](https://www.aclweb.org/anthology/P18-1007.pdf)
+
 初始化一个大词表，再根据评估准则不断丢弃词表，直到满足限定条件为止，词表由大变小。<br/>
 ULM是另外一种subword分隔算法，它能够输出带概率的多个子词分段。假设：所有subword的出现都是独立的，并且subword序列由subword出现概率的乘积产生。
 
@@ -137,7 +139,8 @@ class WordpieceTokenizer(object):
 * [Neural machine translation of rare words with subword units](https://www.aclweb.org/anthology/P16-1162.pdf)
 * [Google’s neural machine translation system: Bridging the gap between
 human and machine translation](https://arxiv.org/pdf/1609.08144.pdf)
-* [Japanese and Korean voice search]()
+* [Japanese and Korean voice search](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/37842.pdf)
+* [Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates](https://www.aclweb.org/anthology/P18-1007.pdf)
 * [Byte pair encoding](https://en.wikipedia.org/wiki/Byte_pair_encoding)
 * [深入理解NLP Subword算法：BPE、WordPiece、ULM](https://zhuanlan.zhihu.com/p/86965595)
 * [NLP Subword三大算法原理：BPE、WordPiece、ULM](https://mp.weixin.qq.com/s/dCImNYDmIk6tWJFCp5OE-w)
