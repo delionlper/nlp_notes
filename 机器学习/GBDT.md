@@ -7,7 +7,7 @@
 1. 选择最有切分变量![](https://latex.codecogs.com/svg.latex?j)和切分点![](https://latex.codecogs.com/svg.latex?s)，求解<br/>
 ![](https://latex.codecogs.com/svg.latex?\mathop{min}_{j,s}\left[\mathop{min}_{c_1}\sum_{x_i\in{R_1(j,s)}}{(y_i-c_1)}^2+\mathop{min}_{c_2}\sum_{x_i\in{R_2(j,s)}}{(y_i-c_2)}^2\right])<br/>
 遍历变量![](https://latex.codecogs.com/svg.latex?j)，对固定的切分变量![](https://latex.codecogs.com/svg.latex?j)扫描切分点![](https://latex.codecogs.com/svg.latex?s)，选择使上式达到最小值的对![](https://latex.codecogs.com/svg.latex?(j,s))。
-2. 用选定的对![](https://latex.codecogs.com/svg.latex?(j,s))划分区域并决定相应的输出值：
+2. 用选定的对![](https://latex.codecogs.com/svg.latex?(j,s))划分区域并决定相应的输出值：<br/>
 ![](https://latex.codecogs.com/svg.latex?R_1(j,s)=\left\\{x|x^{(j)}\leq{s}\right\\},R_2(j,s)=\left\\{x|x^{(j)}>{s}\right\\}) <br/>
 ![](https://latex.codecogs.com/svg.latex?\hat{c}_m=\frac{1}{N_m}\sum_{x_i\in{R_m(j,s)}}y_i,\quad{x\in{R_m}},\quad{m=1,2})
 3. 继续对两个子空间调用步骤1，2，直至满足停止条件。
@@ -26,7 +26,8 @@
     + 对![](https://latex.codecogs.com/svg.latex?r_{mi})拟合一个回归树，得到第m颗树的叶节点区域![](https://latex.codecogs.com/svg.latex?R_{mj},j=1,2,..,J)
     + 对![](https://latex.codecogs.com/svg.latex?j=1,2,..,J)，计算<br/>
     ![](https://latex.codecogs.com/svg.latex?c_{mj}=arg\mathop{min}_{c}\sum_{x_i\in{R_{mj}}}L(y_i,f_{m-1}(x_i)+c))
-    + 更新![](https://latex.codecogs.com/svg.latex?f_m(x)=f_{m-1}(x)+\sum_{j=1}^Jc_{mj}I{(x\in{R_{mj}})})
+    + 更新 <br/>
+    ![](https://latex.codecogs.com/svg.latex?f_m(x)=f_{m-1}(x)+\sum_{j=1}^Jc_{mj}I{(x\in{R_{mj}})})
 3. 得到回归树 <br/>
 ![](https://latex.codecogs.com/svg.latex?\hat{f}(x)=f_M(x)=\sum_{m=1}^M\sum_{j=1}^{J}c_{mj}I{(x\in{R_{mj}})})
 
